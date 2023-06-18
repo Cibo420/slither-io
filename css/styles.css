@@ -1,0 +1,298 @@
+
+body {
+  background-color: rgb(0, 0, 0);
+  color: rgb(213, 149, 0);
+  margin: 0;
+  padding: 0;
+}
+#score-value{
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  align-self: center;
+}
+#new-game-btn{
+  margin-top: 20px; 
+  
+}
+.btn:hover{
+  background-color: rgb(66, 187, 243);
+  color: black;
+}
+.btn {
+    font-family: Arial, sans-serif;
+    background-color: rgb(213, 149, 0);
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+.scoreboard {
+  order: 1;
+  background-color: rgb(213, 149, 0);
+  color: black;
+  margin: 20px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  border-radius: 10px;
+  text-align: center;
+  transition: opacity 0.3s ease;
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.new-game-btn:hover {
+  background-color: black;
+  color: rgb(213, 149, 0);
+}
+
+.game-over-text {
+  font-family: Arial, sans-serif;
+  font-size: 48px;
+  text-align: center;
+}
+
+.scoreboard.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.ui{
+  display: flex;
+  padding: 20px;
+  justify-content: space-evenly;
+  align-items: baseline;
+  
+}
+
+.scoreboard.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+#leaderboard {
+  position: fixed;
+  bottom: 250px;
+  left: 0;
+  padding: 15px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px;
+  color: rgb(213, 149, 0);
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  width: 12%; /* Adjust based on your preference */
+  max-width: 20%;
+  overflow-y: auto; 
+  box-shadow: 0px 0px 10px rgba(213, 149, 0, 0.5);
+  margin: 10px;
+}
+#connection_status{
+  position: fixed;
+  right: 300px;
+  bottom: 20px;
+  color: rgb(213, 149, 0); /* You can adjust color as per your theme */
+  font-family: Arial, sans-serif;
+  font-size: 16px; /* Adjust font-size as needed */
+  background-color: rgba(0,0,0,0.7); /* Background color to make the text visible over other content */
+  padding: 10px;
+  border-radius: 5px;
+}
+#location {
+  position: fixed;
+  left: 0px;
+  bottom: 20px;
+  color: rgb(213, 149, 0); /* You can adjust color as per your theme */
+  font-family: Arial, sans-serif;
+  font-size: 16px; /* Adjust font-size as needed */
+  background-color: rgba(0,0,0,0.7); /* Background color to make the text visible over other content */
+  padding: 10px;
+  border-radius: 5px;
+}
+.copyright{
+  display: flex;
+  justify-content: baseline;
+  position: fixed; 
+  right: 0px;
+  bottom: 15px;
+  color: rgb(255, 255, 255); /* You can adjust color as per your theme */
+  font-family: Arial, sans-serif;
+  font-size: 16px; /* Adjust font-size as needed */
+  background-color: rgba(0,0,0,0.7); /* Background color to make the text visible over other content */
+  padding: 10px;
+  border-radius: 5px;
+}
+#leaderboard thead tr {
+  font-weight: bold;
+  background-color: rgb(213, 149, 0);
+  color: rgb(0, 0, 0);
+}
+.author{
+  color: rgb(213, 149, 0);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#leaderboard tbody tr:nth-child(even) {
+  background-color: rgb(100, 100, 100);
+  color: rgb(213, 149, 0);
+}
+
+#leaderboard tbody tr:nth-child(odd) {
+  background-color: rgb(50, 50, 50);
+  color: rgb(213, 149, 0);
+}
+
+h1 {
+  animation: bounce 2s ease-in-out;
+  color: #FFFFFF;
+  text-align: center;
+}
+p {
+  animation: slideDown 1s ease-in-out;
+  color: #FFFFFF;
+  text-align: center;
+}
+#start-game-btn{
+  animation: pulse 1s ease-in-out infinite;
+  align-self: center;
+  color: #FFFFFF;
+  text-align: center;
+  width : 10%;
+  justify-content: center;
+  position: relative;
+  left: 45%;
+  
+}
+#start-game-btn:hover{
+  color: #FFFFFF;
+  text-align: center;
+}
+
+
+
+input[type='text'] {
+  display: block;
+  width: 300px;
+  height: 40px;
+  margin: 20px auto;
+  background: #f2f2f2;
+  border: 0;
+  padding: 5px;
+  font-size: 18px;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+input[type='text']:focus {
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes bounce {
+	0% {
+		animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+		opacity: 1;
+		transform: translateY(-50px);
+	}
+
+	20% {
+		opacity: 1;
+	}
+
+	30% {
+		animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+		transform: translateY(-30px);
+	}
+
+	50% {
+		animation-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+		transform: translateY(-20px);
+	}
+
+	70% {
+		animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+		transform: translateY(-10px);
+	}
+
+	90% {
+		animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+		transform: translateY(-5px);
+	}
+
+	15%,
+	45%,
+	60%,
+	80% {
+		animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+		transform: translateY(0px);
+	}
+
+	100% {
+		animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+.gameInstruction{
+  color: rgb(213, 149, 0);
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+} 
+/* Media Query */
+@media screen and (max-width: 768px) {
+  /* Adjust styles for screens with a maximum width of 768px */
+  .ui {
+    display: flex;
+    padding: 20px;
+    justify-content: space-evenly;
+    align-items: baseline;
+    position: relative; /* Add this line */
+    z-index: 2; /* Add this line */
+  }
+
+  #leaderboard {
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #connection_status {
+    right: 0;
+    bottom: 80px;
+  }
+
+  #location {
+    bottom: 20px;
+  }
+
+  .gameInstruction {
+    font-size: 16px;
+  }
+}
