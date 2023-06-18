@@ -13,6 +13,8 @@ V neposlední řadě se zde nachází také Leaderboard, kde se zobrazuje TOP5 n
 Dokumentace je v kódu popřípadě zde v Read.me
 
 Evaluace kritérií.
+
+
 HTML
 HTML Validita -> HTML Je validní bez errorů, na moderních prohlížečích funguje sémantické značky jsem použil
 <main>,<footer> atd.
@@ -21,12 +23,14 @@ Media Video/Audio -> použito při klikáni tlačítek a při úmrtí hráče ve
 Formulářové prvky -> Používám jeden pro zadání jména, validace probíha v JS, autofocus je implementován
 Offline: Aplikace funguje bez problému i online
 
+
 CSS
 Pokročilé selektory -> využity pseudo třídy jako n-nth child, kombinátory také
 Vendor prefix -> jsou definované pro animace
 CSS3 transformace 2D/3D -> Jsou použity při skládání animací, avšak také prvky p jsou natočené, stejně tak gameover text.
 CSS3 transitions/animations -> Jsou použity jsou definovány animace pulse,bounce a slideDown
 Media queries -> Používám pro nastavení vlastností prvků UI, connection statusu apod. @media screen and(max-width:768px)
+
 
 Javascript
 OOP přístup: Téměř vše je v OOP.
