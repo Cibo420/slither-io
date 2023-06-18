@@ -17,27 +17,40 @@ Evaluace kritérií.
 
 HTML
 HTML Validita -> HTML Je validní bez errorů, na moderních prohlížečích funguje sémantické značky jsem použil <main>,<footer> atd.
+
 Grafika -> SVG/Canvas -> SVG je použito ve vodoznaku ve footeru na herní stránce, celá hra je pak canvas element.
+
 Media Video/Audio -> použito při klikáni tlačítek a při úmrtí hráče ve hře.
+
 Formulářové prvky -> Používám jeden pro zadání jména, validace probíha v JS, autofocus je implementován
+
 Offline: Aplikace funguje bez problému i online
 
 
 CSS
 Pokročilé selektory -> využity pseudo třídy jako n-nth child, kombinátory také
+
 Vendor prefix -> jsou definované pro animace
+
 CSS3 transformace 2D/3D -> Jsou použity při skládání animací, avšak také prvky p jsou natočené, stejně tak gameover text.
+
 CSS3 transitions/animations -> Jsou použity jsou definovány animace pulse,bounce a slideDown
+
 Media queries -> Používám pro nastavení vlastností prvků UI, connection statusu apod. @media screen and(max-width:768px)
 
 
 Javascript
 OOP přístup: Téměř vše je v OOP.
+
 JS Framework či knihovny -> jQuery pro načítání stránek, phaser
+
 Použití pokročilých JS API -> LocalStorage pro ukládání výsledků hráčů, geolocation pro určení pozice hráče, connection pro zjištění jeho stavu online/offline.
+
 Funkční historie: Nedávala v mé implementaci moc smysl.
+
 Offline aplikace: Ano, vpravo dole může uživatel sledovat stav svého připojení.
-JS práce s SVG -> v changeName.js je generovaný stejný svg copyright jako v herní stránce, ale tentokrát pomocí JS
+
+JS práce s SVG -> generování copyright znaku
 
  
   
