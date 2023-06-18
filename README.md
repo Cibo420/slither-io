@@ -16,8 +16,7 @@ Evaluace kritérií.
 
 
 HTML
-HTML Validita -> HTML Je validní bez errorů, na moderních prohlížečích funguje sémantické značky jsem použil
-<main>,<footer> atd.
+HTML Validita -> HTML Je validní bez errorů, na moderních prohlížečích funguje sémantické značky jsem použil <main>,<footer> atd.
 Grafika -> SVG/Canvas -> SVG je použito ve vodoznaku ve footeru na herní stránce, celá hra je pak canvas element.
 Media Video/Audio -> použito při klikáni tlačítek a při úmrtí hráče ve hře.
 Formulářové prvky -> Používám jeden pro zadání jména, validace probíha v JS, autofocus je implementován
