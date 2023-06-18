@@ -12,7 +12,7 @@ Game = function(game) {
       window.playButtonClickSound();
       this.startNewGame();
     }.bind(this);
-  
+
     this.changeNameHandler = function() {
       window.playButtonClickSound();
       var canvas = document.querySelector('canvas'); 
@@ -21,7 +21,7 @@ Game = function(game) {
         $("#main-page").load("pages/menu.html");
       });
     }.bind(this);
-  
+
     this.suicideHandler = function() {
       if(this.gameEnded){
         return;
@@ -34,7 +34,7 @@ Game = function(game) {
 };
 
 Game.prototype = {
-  
+
   preload: function() {
     // Load assets
     this.game.load.image('circle','asset/circle.png');
@@ -53,13 +53,13 @@ Game.prototype = {
             connectionStatus.textContent = "You are " + status;
           }
         }
-    
+
         setConnectionStatus(navigator.onLine ? "Online" : "Offline");
-    
+
         window.addEventListener("online", function() {
           setConnectionStatus("Online");
         });
-    
+
         window.addEventListener("offline", function() {
           setConnectionStatus("Offline");
         });
@@ -69,7 +69,7 @@ Game.prototype = {
     this.game.scale.pageAlignHorizontally = true;
     this.game.scale.pageAlignVertically = true;
     // To hide the scoreboard:
-    
+
     var newGameBtn = document.getElementById("new-game-btn");
     var changeNameBtn = document.getElementById("change-name-btn");
     var suicideBtn = document.getElementById("suicide");
@@ -141,7 +141,7 @@ Game.prototype = {
     // When the player collects food and gains points
     const newScore = 10; // Example: new score value
     this.updateScore(newScore);
-  
+
   },
   initFood: function(x, y) {
     var f = new Food(this.game, x, y);
@@ -195,10 +195,10 @@ Game.prototype = {
 
     gameEnded = true;
     // Add the final score to the scoreboard
-    
+
     // Stop updates and destroy the game
-    
-    
+
+
   },
   startNewGame: function() {
     if (this.game.paused) {
@@ -224,31 +224,62 @@ Game.prototype = {
     var tableBody = document.getElementById("leaderboard-body");
     //clear the table 
     if(tableBody){tableBody.innerText = ""}
-    
+
     // Retrieve all scores from localStorage
     var allScores = JSON.parse(localStorage.getItem('scores')) || [];
-    
+
     // Sort the scores in descending order based on score
     allScores.sort((a, b) => b.score - a.score);
-    
+
     // Display the top 5 scores in the leaderboard
     var topScores = allScores.slice(0, 5);
-    
+
     // Create the header row
     var th = document.createElement('th');
     //tableHead.appendChild(th);
-  
+
     topScores.forEach(function(score, index) {
       // Create a new row and data element
       var tr = document.createElement('tr');
       var td = document.createElement('td');
-    
+
       // Set the content for the score element
       td.textContent = (index + 1) + ". " + score.playerName + " - " + score.score;
-    
+
       // Append the score element to the row, and the row to the leaderboard body
       tr.appendChild(td);
       if(tableBody){tableBody.appendChild(tr)}
     });
   },
 };
+function createSvgAndText() {
+  var copyrightDiv = document.getElementById('copyright');
+
+  // Create the SVG
+  var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('class', 'svg');
+  svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+  svg.setAttribute('viewBox', '0 0 200 200');
+  svg.setAttribute('width', '20px');
+  svg.setAttribute('height', '20px');
+
+  // Create the circle and rect elements for the SVG
+  var shapes = [
+    { shape: 'circle', attributes: { cx: '98', cy: '98', r: '98', fill: 'orange' } },
+    { shape: 'circle', attributes: { cx: '98', cy: '98', r: '78', fill: '#06283D' } },
+    { shape: 'circle', attributes: { cx: '98', cy: '98', r: '55', fill: 'orange' } },
+    { shape: 'circle', attributes: { cx: '98', cy: '98', r: '30', fill: '#06283D' } },
+    { shape: 'rect', attributes: { x: '115', y: '85', width: '45', height: '25', fill: '#06283D' } }
+  ];
+
+  shapes.forEach(function(shapeData) {
+    var shape = document.createElementNS('http://www.w3.org/2000/svg', shapeData.shape);
+    for (var attr in shapeData.attributes) {
+      shape.setAttribute(attr, shapeData.attributes[attr]);
+    }
+    svg.appendChild(shape);
+  });
+  var copyright = document.getElementsByClassName("author")[0];
+  copyright.appendChild(svg);
+}
+createSvgAndText();

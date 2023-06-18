@@ -2,7 +2,7 @@
 async function handleLocationSuccess(position) {
     const latitude  = position.coords.latitude;
     const longitude = position.coords.longitude;
-  
+
     console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
 
     // Get the location name using OpenCage Data API

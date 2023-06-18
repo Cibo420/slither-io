@@ -4,7 +4,7 @@ function validateInput(playerName) {
     alert('Please enter a name longer than 5 characters');
     return false;
   }
-  
+
   return true;
 }
 
@@ -12,7 +12,7 @@ function startGame() {
   console.log('Starting game...');
   var playerNameInput = document.getElementById('player-name');
   var playerName = playerNameInput.value;
-  
+
   // Validate the input
   if (!validateInput(playerName)) {
     return;
@@ -25,7 +25,7 @@ function startGame() {
   $(function(){
     $("#main-page").load("pages/game.html");
   });
-    
+
 }
 
 // Add an event listener to the start game button

@@ -46,6 +46,7 @@ body {
   -moz-transition: opacity 0.3s ease;
   -o-transition: opacity 0.3s ease;
   z-index: 1;
+  transform: perspective(500px) rotateX(25deg);
 }
 
 .new-game-btn:hover {
@@ -156,6 +157,8 @@ p {
   animation: slideDown 1s ease-in-out;
   color: #FFFFFF;
   text-align: center;
+  transform: perspective(500px) rotateX(25deg);
+
 }
 #start-game-btn{
   animation: pulse 1s ease-in-out infinite;
@@ -274,13 +277,6 @@ input[type='text']:focus {
     align-items: baseline;
     position: relative; /* Add this line */
     z-index: 2; /* Add this line */
-  }
-
-  #leaderboard {
-    bottom: 0; 
-    left: 0;
-    width: 100%;
-    max-width: 100%;
   }
 
   #connection_status {

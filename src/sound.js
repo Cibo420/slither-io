@@ -6,5 +6,5 @@ window.playDeath = function() {
   var deathSound = new Audio("../sounds/death.wav");
   deathSound.volume = 0.2;
   deathSound.play();
-  
+
 };
